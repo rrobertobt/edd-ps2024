@@ -131,9 +131,10 @@ void CardsHandler::seeCard() {
 
 void CardsHandler::showMainGame() {
 
-    cout << "Lists: " << endl;
+    cout << "Columnas de cartas: " << endl;
     for (int i = 0; i < 7; i++) {
-//        lists[i].displayForward();
+        cout << "Columna " << i + 1 << ": " << endl;
+        lists[i].displayForward();
     }
 
     cout << "====================================" << endl;

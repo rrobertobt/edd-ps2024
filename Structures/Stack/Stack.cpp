@@ -1,15 +1,12 @@
 #include "Stack.h"
 
-// Constructor
 Stack::Stack() {
     top = nullptr;
     last = nullptr;
     size = 0;
 }
 
-// Destructor
 Stack::~Stack() {
-    // Free memory for all cards in the stack
     while (top != nullptr) {
         Card* temp = top;
         top = top->next;
@@ -17,12 +14,10 @@ Stack::~Stack() {
     }
 }
 
-// Function to check if the stack is empty
 bool Stack::isEmpty() {
     return size == 0;
 }
 
-// Function to push a card onto the stack
 void Stack::push(Card* card) {
     card->next = top;
     card->previous = nullptr;
@@ -36,7 +31,6 @@ void Stack::push(Card* card) {
     size++;
 }
 
-// Function to pop a card from the stack
 Card* Stack::pop() {
     if (isEmpty()) {
         std::cout << "Stack is empty. Cannot pop." << std::endl;
@@ -55,12 +49,10 @@ Card* Stack::pop() {
     return poppedCard;
 }
 
-// Function to return the top card of the stack without popping it
 Card* Stack::peek() {
     return top;
 }
 
-// Function to display the cards in the stack
 void Stack::display() {
     if (isEmpty()) {
         std::cout << "Stack is empty." << std::endl;
@@ -74,12 +66,10 @@ void Stack::display() {
     }
 }
 
-// Function to return the last card of the stack
 Card* Stack::lastCard() {
     return last;
 }
 
-// Function to return the size of the stack
 int Stack::getSize() {
     return size;
 }
